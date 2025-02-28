@@ -16,21 +16,13 @@ namespace Bai8_HinhTron_Winform
         {
             InitializeComponent();
         }
-
-        private void btnCV_Click(object sender, EventArgs e)
+        private void btnTinh_Click(object sender, EventArgs e)
         {
-            double cv;
-            double r = Convert.ToDouble(txtBK.Text);
-            cv = 2 * Math.PI * r;
-            txtKQ.Text = cv.ToString();
+            double r = double.Parse(txtBK.Text);
+            lblKQ.Text = "- Diện tích: " + dt(r) + "\n- Chu vi: " + cv(r);
         }
+        double cv(double r) { return 2 * Math.PI * r; }
+        double dt(double r) { return Math.PI * r * r; }
 
-        private void btnDT_Click(object sender, EventArgs e)
-        {
-            double dt;
-            double r = Convert.ToDouble(txtBK.Text);
-            dt = Math.PI * r * r;
-            txtKQ.Text = dt.ToString();
-        }
     }
 }
